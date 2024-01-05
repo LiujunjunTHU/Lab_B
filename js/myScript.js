@@ -11,6 +11,18 @@ function openLink(evt, linkName) {
     }
     document.getElementById(linkName).style.display = "block";
     evt.currentTarget.className += " w3-red";
+
+    // 中間抬出的DIV
+    var modalElem = document.getElementById("tyModal");
+        var spanElem = document.getElementsByClassName("tyClose")[0];
+
+        spanElem.onclick = function () {
+            modalElem.style.display = "none";
+        }
+
+        setTimeout(function () {
+            modalElem.style.display = "block";
+        }, 1000);
 }
 
 // Click on the first tablink on load
